@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.youtube.com/watch?v=zFr4_-8x8Ek">
+  <url>
+    <loc>https://www.yourwebsite.com/</loc>
+    <lastmod>2024-11-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https:https://www.youtube.com/shorts/QHBW2VWJLek</loc>
+    <lastmod>2024-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://https://www.youtube.com/watch?v=hNJ8J2Yb44Y</loc>
+    <lastmod>2024-11-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

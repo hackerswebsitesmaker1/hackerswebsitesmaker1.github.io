@@ -1,74 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jujutsu Kaisen - Season 2 Episodes</title>
-    <style>
-        body {
-            background-color: #16213e;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        h1 {
-            color: #FFD700;
-        }
-        .episode-container {
-            margin: 20px auto;
-            width: 80%;
-            max-width: 600px;
-            padding: 15px;
-            background-color: #1a1a2e;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-        video {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .download-btn {
-            display: block;
-            margin: 10px 0;
-            padding: 10px;
-            background-color: #FFD700;
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-        .download-btn:hover {
-            background-color: #00FF00;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jujutsu Kaisen - Season 2 Episodes</title>
+  <style>
+    body {
+      background-color: #16213e;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      color: #FFD700;
+    }
+    .episode-container {
+      margin: 20px auto;
+      width: 80%;
+      max-width: 600px;
+      padding: 15px;
+      background-color: #1a1a2e;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+    video {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .download-btn {
+      display: block;
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #FFD700;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    .download-btn:hover {
+      background-color: #00FF00;
+    }
+  </style>
 </head>
 <body>
-    <h1>Jujutsu Kaisen - Season 2</h1>
-    <p>Watch episodes online or download them.</p>
+  <h1>Jujutsu Kaisen - Season 2</h1>
+  <p>Watch episodes online or download them.</p>
 
-    <!-- Episodes 1 to 23 -->
-    <script>
-        let episodes = [];
+  <!-- Episodes 1 to 23 -->
+  <script>
+    let episodes = [];
+    // Updated relative paths – ensure these video files are uploaded in your repository.
+    for (let i = 1; i <= 23; i++) {
+      episodes.push(`./Jujutsu%20Kaisen%20S2-${i}%20Sub%201084.mp4`);
+    }
+    for (let i = 0; i < episodes.length; i++) {
+      document.write(`
+        <div class="episode-container">
+          <h2>Episode ${i + 1}</h2>
+          <video controls>
+            <source src="${episodes[i]}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <a href="${episodes[i]}" download class="download-btn">Download Episode ${i + 1}</a>
+        </div>
+      `);
+    }
+  </script>
 
-        // Corrected path to your local files
-        for (let i = 1; i <= 23; i++) {
-            episodes.push(`file:///C:/Users/Administrator/Downloads/jjk/Jujutsu%20Kaisen%20S2-${i}%20Sub%201084.mp4`);
-        }
-
-        for (let i = 0; i < episodes.length; i++) {
-            document.write(`
-                <div class="episode-container">
-                    <h2>Episode ${i + 1}</h2>
-                    <video controls>
-                        <source src="${episodes[i]}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <a href="${episodes[i]}" download class="download-btn">Download Episode ${i + 1}</a>
-                </div>
-            `);
-        }
-    </script>
-
-    <a href="index.html" style="color:#FFD700; text-decoration: none; display: block; margin: 20px;">Back to Home</a>
+  <a href="index.htm" style="color:#FFD700; text-decoration: none; display: block; margin: 20px;">Back to Home</a>
 </body>
 </html>

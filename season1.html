@@ -44,29 +44,22 @@
 </head>
 <body>
   <h1>Jujutsu Kaisen - Season 1</h1>
-  <p>Watch episodes online or download them.</p>
+  <p>Watch the episode online or download it.</p>
 
-  <!-- Episodes 1 to 24 -->
-  <script>
-    let episodes = [];
-    // Updated relative paths – ensure these video files are uploaded in your repository.
-    for (let i = 1; i <= 24; i++) {
-      episodes.push(`./Jujutsu%20Kaisen%20S1%20E${i}.mp4`);
-    }
-    for (let i = 0; i < episodes.length; i++) {
-      document.write(`
-        <div class="episode-container">
-          <h2>Episode ${i + 1}</h2>
-          <video controls>
-            <source src="${episodes[i]}" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <a href="${episodes[i]}" download class="download-btn">Download Episode ${i + 1}</a>
-        </div>
-      `);
-    }
-  </script>
+  <!-- Only Episode 1 is available -->
+  <div class="episode-container">
+    <h2>Episode 1</h2>
+    <video controls>
+      <source src="https://drive.google.com/uc?export=download&id=16PKdyokC3F5Ia3WoTjc7BIwex19aDhEC" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <a href="https://drive.google.com/uc?export=download&id=16PKdyokC3F5Ia3WoTjc7BIwex19aDhEC" download class="download-btn">
+      Download Episode 1
+    </a>
+  </div>
 
-  <a href="index.htm" style="color:#FFD700; text-decoration: none; display: block; margin: 20px;">Back to Home</a>
+  <a href="index.htm" style="color:#FFD700; text-decoration: none; display: block; margin: 20px;">
+    Back to Home
+  </a>
 </body>
 </html>

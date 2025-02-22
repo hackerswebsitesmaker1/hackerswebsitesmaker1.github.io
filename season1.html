@@ -17,15 +17,16 @@
     .episode-container {
       margin: 20px auto;
       width: 80%;
-      max-width: 600px;
+      max-width: 800px;
       padding: 15px;
       background-color: #1a1a2e;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     }
-    video {
+    iframe {
       width: 100%;
       border-radius: 10px;
+      height: 400px;
     }
     .download-btn {
       display: block;
@@ -46,16 +47,14 @@
   <h1>Jujutsu Kaisen - Season 1</h1>
   <p>Watch episodes online or download them.</p>
 
-  <!-- Episode 1 (Google Drive with Preview Mode) -->
+  <!-- Episode 1 (Vimeo Embedded) -->
   <div class="episode-container">
     <h2>Episode 1</h2>
-    <video controls>
-      <source src="https://drive.google.com/uc?export=preview&id=16PKdyokC3F5Ia3WoTjc7BIwex19aDhEC" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <a href="https://drive.google.com/uc?export=download&id=16PKdyokC3F5Ia3WoTjc7BIwex19aDhEC" download class="download-btn">
-      Download Episode 1
-    </a>
+    <iframe src="https://player.vimeo.com/video/1059344127?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+            width="1280" height="720" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+            title="Jujutsu Kaisen S1 E1.mp4">
+    </iframe>
+    <a href="https://vimeo.com/1059344127" target="_blank" class="download-btn">Watch on Vimeo</a>
   </div>
 
   <!-- Placeholder for Episodes 2-24 -->

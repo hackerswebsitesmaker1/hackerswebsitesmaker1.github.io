@@ -17,7 +17,7 @@
     .episode-container {
       margin: 20px auto;
       width: 80%;
-      max-width: 600px;
+      max-width: 800px;
       padding: 15px;
       background-color: #1a1a2e;
       border-radius: 10px;
@@ -46,10 +46,21 @@
   <h1>Jujutsu Kaisen - Season 1</h1>
   <p>Watch episodes online or download them.</p>
 
-  <!-- Episodes 1-10 -->
+  <!-- Episode 1 (Original Code - Not Changed) -->
+  <div class="episode-container">
+    <h2>Episode 1</h2>
+    <video controls width="1280" height="720">
+      <source src="https://www.dropbox.com/scl/fi/20wy5txrnomcbtneek6n1/Jujutsu-Kaisen-S1-E1.mp4?raw=1" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <a href="https://www.dropbox.com/scl/fi/20wy5txrnomcbtneek6n1/Jujutsu-Kaisen-S1-E1.mp4?dl=1" class="download-btn">
+      Download Episode 1
+    </a>
+  </div>
+
+  <!-- Episodes 2-10 -->
   <script>
     let episodes = [
-      "https://www.dropbox.com/scl/fi/20wy5txrnomcbtneek6n1/Jujutsu-Kaisen-S1-E1.mp4?raw=1",
       "https://www.dropbox.com/scl/fi/b8fzb2yjbks96kj56sl9l/Jujutsu-Kaisen-S1-E2.mp4?raw=1",
       "https://www.dropbox.com/scl/fi/e0nsk4ppgd2hfgcddyeua/Jujutsu-Kaisen-S1-E3.mp4?raw=1",
       "https://www.dropbox.com/scl/fi/86mdv2ysq31g5j9gt7nny/Jujutsu-Kaisen-S1-E4.mp4?raw=1",
@@ -64,12 +75,12 @@
     for (let i = 0; i < episodes.length; i++) {
       document.write(`
         <div class="episode-container">
-          <h2>Episode ${i + 1}</h2>
-          <video controls>
+          <h2>Episode ${i + 2}</h2>
+          <video controls width="1280" height="720">
             <source src="${episodes[i]}" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <a href="${episodes[i].replace('raw=1', 'dl=1')}" class="download-btn">Download Episode ${i + 1}</a>
+          <a href="${episodes[i].replace('raw=1', 'dl=1')}" class="download-btn">Download Episode ${i + 2}</a>
         </div>
       `);
     }

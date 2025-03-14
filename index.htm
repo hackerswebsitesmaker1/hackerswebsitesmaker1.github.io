@@ -10,8 +10,15 @@
       color: white;
       text-align: center;
       font-family: Arial, sans-serif;
+      background-image: url('ramadan-background.png'); /* Ramadan decoration */
+      background-size: cover;
+      background-position: center;
     }
-    h1 { color: #FFD700; }
+    h1 { 
+      color: #FFD700; 
+      font-size: 2.5em;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    }
     .container {
       display: flex;
       justify-content: center;
@@ -52,9 +59,18 @@
       text-decoration: none;
       margin: 0 10px;
     }
+    .ramadan-decor {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 1;
+      width: 100px;
+      height: auto;
+    }
   </style>
 </head>
 <body>
+  <img src="crescent-moon.png" alt="Ramadan Decoration" class="ramadan-decor"> <!-- Ramadan Crescent Moon -->
   <h1>Jujutsu Kaisen - Watch & Download</h1>
   <div class="container">
     <div class="card">
@@ -83,6 +99,5 @@
     <a href="https://discord.com/yourlink" target="_blank">Discord</a> |
     <a href="https://facebook.com/yourlink" target="_blank">Facebook</a>
   </footer>
-
 </body>
 </html>

@@ -6,12 +6,14 @@
   <title>Jujutsu Kaisen - Watch & Download</title>
   <style>
     body {
-      background: linear-gradient(to bottom, #1a1a2e, #16213e);
+      background: url('https://i.imgur.com/N6R8fGC.png') no-repeat center center fixed;
+      background-size: cover;
       color: white;
       text-align: center;
       font-family: Arial, sans-serif;
     }
     h1 { color: #FFD700; }
+
     .container {
       display: flex;
       justify-content: center;
@@ -19,6 +21,7 @@
       flex-wrap: wrap;
       margin-top: 20px;
     }
+
     .card {
       background-color: #1a1a2e;
       border-radius: 10px;
@@ -39,23 +42,62 @@
       display: block;
       margin-top: 10px;
     }
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      background-color: #1a1a2e;
-      color: white;
+
+    /* Ramadan Banner */
+    #ramadan-banner {
+      background: rgba(255, 223, 0, 0.8);
+      color: black;
+      padding: 10px;
+      font-size: 20px;
+      font-weight: bold;
       text-align: center;
-      font-size: 16px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
     }
-    footer a {
-      color: #FFD700;
-      text-decoration: none;
-      margin: 0 10px;
+
+    /* Sign-in Form */
+    .auth-container {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      display: inline-block;
+    }
+    input, button {
+      margin: 5px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    button {
+      background: #FFD700;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #00FF00;
     }
   </style>
 </head>
 <body>
+
+  <div id="ramadan-banner">🌙 Ramadan Mubarak! May your fasting be accepted! 🕌</div>
+
   <h1>Jujutsu Kaisen - Watch & Download</h1>
+
+  <!-- Sign-In / Sign-Up Form -->
+  <div class="auth-container" id="auth-section">
+    <h2>Sign In / Sign Up (Optional)</h2>
+    <input type="text" id="username" placeholder="Enter username">
+    <input type="password" id="password" placeholder="Enter password">
+    <button onclick="signUp()">Sign Up</button>
+    <button onclick="signIn()">Sign In</button>
+    <button onclick="signOut()" id="signOutBtn" style="display:none;">Sign Out</button>
+    <p id="auth-message"></p>
+  </div>
+
   <div class="container">
     <div class="card">
       <a href="season1.html">
@@ -77,12 +119,53 @@
     </div>
   </div>
 
-  <footer>
-    <p>This was created by a JJK fan. Join us on:</p>
-    <a href="https://twitter.com/yourlink" target="_blank">Twitter</a> |
-    <a href="https://discord.com/yourlink" target="_blank">Discord</a> |
-    <a href="https://facebook.com/yourlink" target="_blank">Facebook</a>
-  </footer>
+  <script>
+    // Sign-In & Sign-Up System (Local Storage)
+    function signUp() {
+      let username = document.getElementById("username").value;
+      let password = document.getElementById("password").value;
+      if (username && password) {
+        if (localStorage.getItem(username)) {
+          document.getElementById("auth-message").innerText = "⚠ Username already taken!";
+        } else {
+          localStorage.setItem(username, password);
+          document.getElementById("auth-message").innerText = "✅ Account created! Now sign in.";
+        }
+      } else {
+        document.getElementById("auth-message").innerText = "⚠ Please enter a username & password!";
+      }
+    }
+
+    function signIn() {
+      let username = document.getElementById("username").value;
+      let password = document.getElementById("password").value;
+      if (localStorage.getItem(username) === password) {
+        sessionStorage.setItem("loggedInUser", username);
+        document.getElementById("auth-message").innerText = `✅ Welcome, ${username}!`;
+        document.getElementById("signOutBtn").style.display = "inline-block";
+        document.getElementById("auth-section").style.display = "none";
+      } else {
+        document.getElementById("auth-message").innerText = "⚠ Incorrect username or password!";
+      }
+    }
+
+    function signOut() {
+      sessionStorage.removeItem("loggedInUser");
+      document.getElementById("auth-message").innerText = "You have signed out.";
+      document.getElementById("signOutBtn").style.display = "none";
+      document.getElementById("auth-section").style.display = "block";
+    }
+
+    // Check if user is already logged in
+    window.onload = function () {
+      let loggedInUser = sessionStorage.getItem("loggedInUser");
+      if (loggedInUser) {
+        document.getElementById("auth-message").innerText = `✅ Welcome back, ${loggedInUser}!`;
+        document.getElementById("signOutBtn").style.display = "inline-block";
+        document.getElementById("auth-section").style.display = "none";
+      }
+    };
+  </script>
 
 </body>
 </html>

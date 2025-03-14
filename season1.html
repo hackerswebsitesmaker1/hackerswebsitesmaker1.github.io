@@ -46,34 +46,31 @@
   <h1>Jujutsu Kaisen - Season 1</h1>
   <p>Watch episodes online or download them.</p>
 
-  <!-- Episodes 2-10 -->
-  <script>
-    let episodes = [
-      "https://www.dropbox.com/scl/fi/b8fzb2yjbks96kj56sl9l/Jujutsu-Kaisen-S1-E2.mp4?dl=1",
-      "https://www.dropbox.com/scl/fi/e0nsk4ppgd2hfgcddyeua/Jujutsu-Kaisen-S1-E3.mp4?dl=1",
-      "https://www.dropbox.com/scl/fi/86mdv2ysq31g5j9gt7nny/Jujutsu-Kaisen-S1-E4.mp4?dl=1",
-      "https://www.dropbox.com/scl/fi/arup6ta7885wxoki0tugk/Jujutsu-Kaisen-S1-E5.mp4?dl=1",
-      "https://www.dropbox.com/scl/fi/41nnjbllmh6dsxm2hncud/Jujutsu-Kaisen-S1-E6.mp4?dl=1",
-      "https://www.dropbox.com/scl/fi/f1vub8gxke45r14ok38tn/Jujutsu-Kaisen-S1-E7.mp4?dl=1",
-      "https://www.dropbox.com/scl/fi/emc6ejuhpmte4a8cewy0e/Jujutsu-Kaisen-S1-E8.mp4?dl=1",
-      "https://www.dropbox.com/scl/fi/4yz5elswyubselv03hzs5/Jujutsu-Kaisen-S1-E9.mp4?dl=1",
-      "https://www.dropbox.com/scl/fi/tctskmjz37fszaafzvj11/Jujutsu-Kaisen-S1-E10.mp4?dl=1"
-    ];
+  <!-- Episode 1 (Dropbox Streaming) -->
+  <div class="episode-container">
+    <h2>Episode 1</h2>
+    <video controls width="1280" height="720">
+      <source src="https://www.dropbox.com/scl/fi/20wy5txrnomcbtneek6n1/Jujutsu-Kaisen-S1-E1.mp4?rlkey=vcn7r5e7pyn67dcfh11s3n8b5&st=jbswfhsb&raw=1" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <a href="https://www.dropbox.com/scl/fi/20wy5txrnomcbtneek6n1/Jujutsu-Kaisen-S1-E1.mp4?rlkey=vcn7r5e7pyn67dcfh11s3n8b5&st=jbswfhsb&dl=1" class="download-btn">
+      Download Episode 1
+    </a>
+  </div>
 
-    for (let i = 0; i < episodes.length; i++) {
+  <!-- Placeholder for Episodes 2-24 -->
+  <script>
+    for (let i = 2; i <= 24; i++) {
       document.write(`
         <div class="episode-container">
-          <h2>Episode ${i + 2}</h2>
-          <video controls width="1280" height="720">
-            <source src="${episodes[i]}" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <a href="${episodes[i]}" class="download-btn">Download Episode ${i + 2}</a>
+          <h2>Episode ${i}</h2>
+          <p>Coming Soon...</p>
         </div>
       `);
     }
   </script>
 
-  <a href="index.htm" style="color:#FFD700; text-decoration: none; display: block; margin: 20px;">Back to Home</a>
+  <a href="index.htm" style="color:#FFD700; text-decoratio
+n: none; display: block; margin: 20px;">Back to Home</a>
 </body>
 </html>

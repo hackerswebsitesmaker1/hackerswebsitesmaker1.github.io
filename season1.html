@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jujutsu Kaisen - Season 1 Episodes</title>
+  <title>Jujutsu Kaisen - Season 2 Episodes</title>
   <style>
     body {
       background-color: #16213e;
@@ -43,72 +43,31 @@
   </style>
 </head>
 <body>
-  <h1>Jujutsu Kaisen - Season 1</h1>
+  <h1>Jujutsu Kaisen - Season 2</h1>
   <p>Watch episodes online or download them.</p>
 
-  <!-- Episode 1 -->
-  <div class="episode-container">
-    <h2>Episode 1</h2>
-    <video controls width="1280" height="720">
-      <source src="https://www.dropbox.com/scl/fi/20wy5txrnomcbtneek6n1/Jujutsu-Kaisen-S1-E1.mp4?raw=1" type="video/mp4">
-    </video>
-    <a href="https://www.dropbox.com/scl/fi/20wy5txrnomcbtneek6n1/Jujutsu-Kaisen-S1-E1.mp4?dl=1" class="download-btn">Download Episode 1</a>
-  </div>
-
-  <!-- Episodes 2-10 -->
-  <h2>Episodes 2-10</h2>
-  <div id="episodes2to10"></div>
-
-  <!-- Episodes 11-22 -->
-  <h2>Episodes 11-22</h2>
-  <div id="episodes11to22"></div>
-
+  <!-- Episodes 1-5 -->
   <script>
-    let episodes2to10 = [
-      "https://www.dropbox.com/scl/fi/b8fzb2yjbks96kj56sl9l/Jujutsu-Kaisen-S1-E2.mp4?raw=1",
-      "https://www.dropbox.com/scl/fi/e0nsk4ppgd2hfgcddyeua/Jujutsu-Kaisen-S1-E3.mp4?raw=1",
-      "https://www.dropbox.com/scl/fi/86mdv2ysq31g5j9gt7nny/Jujutsu-Kaisen-S1-E4.mp4?raw=1",
-      "https://www.dropbox.com/scl/fi/arup6ta7885wxoki0tugk/Jujutsu-Kaisen-S1-E5.mp4?raw=1",
-      "https://www.dropbox.com/scl/fi/41nnjbllmh6dsxm2hncud/Jujutsu-Kaisen-S1-E6.mp4?raw=1",
-      "https://www.dropbox.com/scl/fi/f1vub8gxke45r14ok38tn/Jujutsu-Kaisen-S1-E7.mp4?raw=1",
-      "https://www.dropbox.com/scl/fi/emc6ejuhpmte4a8cewy0e/Jujutsu-Kaisen-S1-E8.mp4?raw=1",
-      "https://www.dropbox.com/scl/fi/4yz5elswyubselv03hzs5/Jujutsu-Kaisen-S1-E9.mp4?raw=1",
-      "https://www.dropbox.com/scl/fi/tctskmjz37fszaafzvj11/Jujutsu-Kaisen-S1-E10.mp4?raw=1"
+    let episodes = [
+      "https://www.dropbox.com/scl/fi/4qj1u5p2zhle3kwvtjqpa/Jujutsu-Kaisen-S2-1-Sub-1080p.mp4?rlkey=nkh2mo2z4j8gggn4m68uyl32e&st=ji1bdsme&raw=1",
+      "https://www.dropbox.com/scl/fi/pg2zpmqhi8cpuw6irn12g/Jujutsu-Kaisen-S2-2-Sub-1080p.mp4?rlkey=vy600q6mgmdayo58p4nqk0iqs&st=4vk96rm0&raw=1",
+      "https://www.dropbox.com/scl/fi/swdgkqs4jzqd1l9nzffbr/Jujutsu-Kaisen-S2-3-Sub-1080p.mp4?rlkey=ms54jbrinjo77mz6uk96s2o25&st=mw7lpd9y&raw=1",
+      "https://www.dropbox.com/scl/fi/u69sovxng8240kxp6lilz/Jujutsu-Kaisen-S2-4-Sub-1080p.mp4?rlkey=t96y6lorxygu9o0vat3nuswcx&st=k1m1qiai&raw=1",
+      "https://www.dropbox.com/scl/fi/2kbjiz5qg6izsd01pviqi/Jujutsu-Kaisen-S2-5-Sub-1080.mp4?rlkey=6t96hcyaf2ifak8ql3m51rsab&st=34l6x4g0&raw=1"
     ];
 
-    let episodes11to22 = [
-      "https://www.dropbox.com/scl/fi/rfclwmv3nfzdm3jatdukg/Jujutsu-Kaisen-S1-E11.mp4?raw=1",
-      "https://www.dropbox.com/scl/fi/306q7szwt8xnr58j1yui7/Jujutsu-Kaisen-S1-E12.mp4?raw=1",
-      "https://www.dropbox.com/scl/fi/2x4b8gqq65ayrca4b7tsw/Jujutsu-Kaisen-S1-E13.mp4?raw=1",
-      "https://www.dropbox.com/scl/fi/i7jrwifn87j91u4tf9dyp/Jujutsu-Kaisen-S1-E14.mp4?raw=1",
-      "https://www.dropbox.com/scl/fi/9ev2i0etnpnojk0ul2ur0/Jujutsu-Kaisen-S1-E15.mp4?raw=1",
-      "https://www.dropbox.com/scl/fi/ipreyga0llau2v6n3uu95/Jujutsu-Kaisen-S1-E16.mp4?raw=1",
-      "https://www.dropbox.com/scl/fi/8zc1lnxy85asuapzneiiq/Jujutsu-Kaisen-S1-E17.mp4?raw=1",
-      "https://www.dropbox.com/scl/fi/4rhfcsaaau4hfzh0yvaks/Jujutsu-Kaisen-S1-E18.mp4?raw=1",
-      "https://www.dropbox.com/scl/fi/oxcqlj9ssls5byyndu8fu/Jujutsu-Kaisen-S1-E19.mp4?raw=1",
-      "https://www.dropbox.com/scl/fi/f2yqm8dedqnh2ah09a522/Jujutsu-Kaisen-S1-E20.mp4?raw=1",
-      "https://www.dropbox.com/scl/fi/8d0atal0bmax745od63f8/Jujutsu-Kaisen-S1-E21.mp4?raw=1",
-      "https://www.dropbox.com/scl/fi/ri5t1qqkd0otpbfmf3tql/Jujutsu-Kaisen-S1-E22.mp4?raw=1"
-    ];
-
-    function addEpisodes(containerId, episodes, startNumber) {
-      let container = document.getElementById(containerId);
-      episodes.forEach((link, index) => {
-        let episodeNum = startNumber + index;
-        container.innerHTML += `
-          <div class="episode-container">
-            <h2>Episode ${episodeNum}</h2>
-            <video controls width="1280" height="720">
-              <source src="${link}" type="video/mp4">
-            </video>
-            <a href="${link.replace('raw=1', 'dl=1')}" class="download-btn">Download Episode ${episodeNum}</a>
-          </div>
-        `;
-      });
+    for (let i = 0; i < episodes.length; i++) {
+      document.write(`
+        <div class="episode-container">
+          <h2>Episode ${i + 1}</h2>
+          <video controls width="1280" height="720">
+            <source src="${episodes[i]}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <a href="${episodes[i].replace('raw=1', 'dl=1')}" class="download-btn">Download Episode ${i + 1}</a>
+        </div>
+      `);
     }
-
-    addEpisodes("episodes2to10", episodes2to10, 2);
-    addEpisodes("episodes11to22", episodes11to22, 11);
   </script>
 
   <a href="index.htm" style="color:#FFD700; text-decoration: none; display: block; margin: 20px;">Back to Home</a>

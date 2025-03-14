@@ -3,36 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jujutsu Kaisen - Watch & Download</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Jujutsu Kaisen Watch & Download</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Sign In & Sign Up Buttons */
+        .auth-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            padding: 10px;
+            background-color: #222;
+        }
+
+        .signup-btn, .signin-btn {
+            background-color: yellow;
+            border: none;
+            padding: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .signup-btn:hover, .signin-btn:hover {
+            background-color: gold;
+        }
+
+        /* Main Content */
+        .content {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .season img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Decorations */
+        .decorations {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .fanous {
+            width: 50px;
+            position: absolute;
+            right: 10px;
+            top: 0;
+        }
+
+        .crescent {
+            width: 40px;
+            position: absolute;
+            left: 10px;
+            top: 0;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            padding: 10px;
+            background-color: #333;
+        }
+
+        /* Ramadan Kareem */
+        .ramadan-kareem {
+            color: gold;
+            font-size: 2.5em;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Ramadan Banner -->
-    <div class="ramadan-banner">
-        <p>🌙 Ramadan Mubarak! May your fasting be accepted! 🌙</p>
-    </div>
-
-    <!-- Sign-In Section -->
-    <div class="signin-container">
-        <button onclick="window.location.href='signin.html'">Sign In</button>
+    <!-- Sign In / Sign Up Section -->
+    <div class="auth-container">
+        <button class="signin-btn">Sign In</button>
+        <button class="signup-btn">Sign Up</button>
     </div>
 
     <!-- Main Content -->
     <div class="content">
         <div class="season">
-            <img src="s1.jpg" alt="Season 1">
+            <img src="download (3).jpg" alt="Season 1">
             <p>Season 1</p>
         </div>
         <div class="season">
-            <img src="s2.jpg" alt="Season 2">
+            <img src="download (4).jpg" alt="Season 2">
             <p>Season 2</p>
         </div>
         <div class="season">
-            <img src="movie.jpg" alt="Jujutsu Kaisen 0">
+            <img src="download (6).jpg" alt="Jujutsu Kaisen 0 Movie">
             <p>Jujutsu Kaisen 0 Movie</p>
         </div>
     </div>
+
+    <!-- Decorations -->
+    <div class="decorations">
+        <img src="fanous.png" alt="Lantern" class="fanous">
+        <img src="crescent.png" alt="Crescent Moon" class="crescent">
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Your Website Name</p>
+    </footer>
+
+    <!-- Ramadan Kareem Text -->
+    <h1 class="ramadan-kareem">Ramadan Kareem</h1>
 
 </body>
 </html>

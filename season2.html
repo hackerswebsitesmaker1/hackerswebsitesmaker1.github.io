@@ -17,7 +17,7 @@
     .episode-container {
       margin: 20px auto;
       width: 80%;
-      max-width: 600px;
+      max-width: 800px;
       padding: 15px;
       background-color: #1a1a2e;
       border-radius: 10px;
@@ -46,22 +46,25 @@
   <h1>Jujutsu Kaisen - Season 2</h1>
   <p>Watch episodes online or download them.</p>
 
-  <!-- Episodes 1 to 23 -->
+  <!-- Episodes 1-5 -->
   <script>
-    let episodes = [];
-    // Updated relative paths – ensure these video files are uploaded in your repository.
-    for (let i = 1; i <= 23; i++) {
-      episodes.push(`./Jujutsu%20Kaisen%20S2-${i}%20Sub%201084.mp4`);
-    }
+    let episodes = [
+      "https://www.dropbox.com/scl/fi/4qj1u5p2zhle3kwvtjqpa/Jujutsu-Kaisen-S2-1-Sub-1080p.mp4?rlkey=nkh2mo2z4j8gggn4m68uyl32e&st=ji1bdsme&raw=1",
+      "https://www.dropbox.com/scl/fi/pg2zpmqhi8cpuw6irn12g/Jujutsu-Kaisen-S2-2-Sub-1080p.mp4?rlkey=vy600q6mgmdayo58p4nqk0iqs&st=4vk96rm0&raw=1",
+      "https://www.dropbox.com/scl/fi/swdgkqs4jzqd1l9nzffbr/Jujutsu-Kaisen-S2-3-Sub-1080p.mp4?rlkey=ms54jbrinjo77mz6uk96s2o25&st=mw7lpd9y&raw=1",
+      "https://www.dropbox.com/scl/fi/u69sovxng8240kxp6lilz/Jujutsu-Kaisen-S2-4-Sub-1080p.mp4?rlkey=t96y6lorxygu9o0vat3nuswcx&st=k1m1qiai&raw=1",
+      "https://www.dropbox.com/scl/fi/2kbjiz5qg6izsd01pviqi/Jujutsu-Kaisen-S2-5-Sub-1080.mp4?rlkey=6t96hcyaf2ifak8ql3m51rsab&st=34l6x4g0&raw=1"
+    ];
+
     for (let i = 0; i < episodes.length; i++) {
       document.write(`
         <div class="episode-container">
           <h2>Episode ${i + 1}</h2>
-          <video controls>
+          <video controls width="1280" height="720">
             <source src="${episodes[i]}" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <a href="${episodes[i]}" download class="download-btn">Download Episode ${i + 1}</a>
+          <a href="${episodes[i].replace('raw=1', 'dl=1')}" class="download-btn">Download Episode ${i + 1}</a>
         </div>
       `);
     }

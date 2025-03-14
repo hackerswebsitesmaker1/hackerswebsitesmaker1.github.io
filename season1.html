@@ -47,8 +47,8 @@
   <p>Watch episodes online or download them.</p>
 
   <!-- Episode 1 -->
-  <h2>Episode 1</h2>
   <div class="episode-container">
+    <h2>Episode 1</h2>
     <video controls width="1280" height="720">
       <source src="https://www.dropbox.com/scl/fi/20wy5txrnomcbtneek6n1/Jujutsu-Kaisen-S1-E1.mp4?raw=1" type="video/mp4">
     </video>
@@ -56,7 +56,6 @@
   </div>
 
   <!-- Episodes 2-10 -->
-  <h2>Episodes 2-10</h2>
   <script>
     let episodes2to10 = [
       "https://www.dropbox.com/scl/fi/b8fzb2yjbks96kj56sl9l/Jujutsu-Kaisen-S1-E2.mp4?raw=1",
@@ -70,21 +69,20 @@
       "https://www.dropbox.com/scl/fi/tctskmjz37fszaafzvj11/Jujutsu-Kaisen-S1-E10.mp4?raw=1"
     ];
 
-    for (let i = 0; i < episodes2to10.length; i++) {
+    episodes2to10.forEach((link, index) => {
       document.write(`
         <div class="episode-container">
-          <h2>Episode ${i + 2}</h2>
+          <h2>Episode ${index + 2}</h2>
           <video controls width="1280" height="720">
-            <source src="${episodes2to10[i]}" type="video/mp4">
+            <source src="${link}" type="video/mp4">
           </video>
-          <a href="${episodes2to10[i].replace('raw=1', 'dl=1')}" class="download-btn">Download Episode ${i + 2}</a>
+          <a href="${link.replace('raw=1', 'dl=1')}" class="download-btn">Download Episode ${index + 2}</a>
         </div>
       `);
-    }
+    });
   </script>
 
   <!-- Episodes 11-22 -->
-  <h2>Episodes 11-22</h2>
   <script>
     let episodes11to22 = [
       "https://www.dropbox.com/scl/fi/rfclwmv3nfzdm3jatdukg/Jujutsu-Kaisen-S1-E11.mp4?raw=1",
@@ -101,17 +99,17 @@
       "https://www.dropbox.com/scl/fi/ri5t1qqkd0otpbfmf3tql/Jujutsu-Kaisen-S1-E22.mp4?raw=1"
     ];
 
-    for (let i = 0; i < episodes11to22.length; i++) {
+    episodes11to22.forEach((link, index) => {
       document.write(`
         <div class="episode-container">
-          <h2>Episode ${i + 11}</h2>
+          <h2>Episode ${index + 11}</h2>
           <video controls width="1280" height="720">
-            <source src="${episodes11to22[i]}" type="video/mp4">
+            <source src="${link}" type="video/mp4">
           </video>
-          <a href="${episodes11to22[i].replace('raw=1', 'dl=1')}" class="download-btn">Download Episode ${i + 11}</a>
+          <a href="${link.replace('raw=1', 'dl=1')}" class="download-btn">Download Episode ${index + 11}</a>
         </div>
       `);
-    }
+    });
   </script>
 
   <a href="index.htm" style="color:#FFD700; text-decoration: none; display: block; margin: 20px;">Back to Home</a>

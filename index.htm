@@ -1,92 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jujutsu Kaisen - Watch & Download</title>
-    <style>
-        body {
-            background-color: #000;
-            color: white;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #222;
-            padding: 10px 20px;
-        }
-        .header h1 {
-            margin: 0;
-        }
-        .auth-buttons {
-            display: flex;
-            gap: 10px;
-        }
-        .auth-buttons button {
-            padding: 10px 15px;
-            background-color: yellow;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        .content {
-            margin-top: 50px;
-        }
-        .movies {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .movie-card {
-            background-color: #111;
-            padding: 10px;
-            border-radius: 10px;
-        }
-        .movie-card img {
-            width: 200px;
-            border-radius: 10px;
-        }
-        .footer {
-            margin-top: 50px;
-            padding: 10px;
-            background-color: #222;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jujutsu Kaisen - Watch & Download</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #1a1a2e, #16213e);
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #1a1a2e;
+    }
+    .header h1 {
+      margin: 0;
+      color: #FFD700;
+    }
+    .auth-buttons {
+      display: flex;
+      gap: 10px;
+    }
+    .auth-buttons button {
+      padding: 10px 15px;
+      background-color: yellow;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .card {
+      background-color: #1a1a2e;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      transition: 0.3s;
+      width: 200px;
+    }
+    .card:hover {
+      transform: scale(1.1);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .card a {
+      color: #FFD700;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #1a1a2e;
+      color: white;
+      text-align: center;
+      font-size: 16px;
+    }
+    footer a {
+      color: #FFD700;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Jujutsu Kaisen - Watch & Download</h1>
-        <div class="auth-buttons">
-            <button>Sign Up</button>
-            <button>Sign In</button>
-        </div>
+  <div class="header">
+    <h1>Jujutsu Kaisen - Watch & Download</h1>
+    <div class="auth-buttons">
+      <button>Sign Up</button>
+      <button>Sign In</button>
     </div>
+  </div>
 
-    <div class="content">
-        <div class="movies">
-            <div class="movie-card">
-                <img src="download (3).jpg" alt="Season 1">
-                <p>Season 1</p>
-            </div>
-            <div class="movie-card">
-                <img src="download (4).jpg" alt="Season 2">
-                <p>Season 2</p>
-            </div>
-            <div class="movie-card">
-                <img src="download (6).jpg" alt="Jujutsu Kaisen 0 Movie">
-                <p>Jujutsu Kaisen 0 Movie</p>
-            </div>
-        </div>
+  <div class="container">
+    <div class="card">
+      <a href="season1.html">
+        <img src="download (3).jpg" alt="Season 1">
+        <p>Season 1</p>
+      </a>
     </div>
+    <div class="card">
+      <a href="season2.html">
+        <img src="download (4).jpg" alt="Season 2">
+        <p>Season 2</p>
+      </a>
+    </div>
+    <div class="card">
+      <a href="movie.html">
+        <img src="download (6).jpg" alt="Movie">
+        <p>Jujutsu Kaisen 0 Movie</p>
+      </a>
+    </div>
+  </div>
 
-    <div class="footer">
-        <p>© 2025 This was created by a JJK fan. Follow us on Twitter, Discord, and Facebook.</p>
-    </div>
+  <footer>
+    <p>This was created by a JJK fan. Join us on:</p>
+    <a href="https://twitter.com/yourlink" target="_blank">Twitter</a> |
+    <a href="https://discord.com/yourlink" target="_blank">Discord</a> |
+    <a href="https://facebook.com/yourlink" target="_blank">Facebook</a>
+  </footer>
 
 </body>
 </html>

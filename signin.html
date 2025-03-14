@@ -40,11 +40,25 @@
 
   <h1>Sign In</h1>
   <div class="auth-container">
-    <input type="text" placeholder="Enter username"><br>
-    <input type="password" placeholder="Enter password"><br>
-    <button>Sign In</button>
+    <input type="text" id="username" placeholder="Enter username"><br>
+    <input type="password" id="password" placeholder="Enter password"><br>
+    <button onclick="signIn()">Sign In</button>
+    <p id="message"></p>
   </div>
 
+  <script>
+    function signIn() {
+      let username = document.getElementById("username").value;
+      let password = document.getElementById("password").value;
+
+      if (localStorage.getItem(username) === password) {
+        sessionStorage.setItem("loggedInUser", username);
+        window.location.href = "index.html"; // Redirect after login
+      } else {
+        document.getElementById("message").innerText = "⚠ Incorrect username or password!";
+      }
+    }
+  </script>
+
 </body>
-  </html>
-  
+</html>

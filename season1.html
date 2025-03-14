@@ -47,40 +47,68 @@
   <p>Watch episodes online or download them.</p>
 
   <!-- Episode 1 -->
+  <h2>Episode 1</h2>
   <div class="episode-container">
-    <h2>Episode 1</h2>
     <video controls width="1280" height="720">
-      <source src="https://www.dropbox.com/scl/fi/20wy5txrnomcbtneek6n1/Jujutsu-Kaisen-S1-E1.mp4?rlkey=vcn7r5e7pyn67dcfh11s3n8b5&st=jbswfhsb&raw=1" type="video/mp4">
-      Your browser does not support the video tag.
+      <source src="https://www.dropbox.com/scl/fi/20wy5txrnomcbtneek6n1/Jujutsu-Kaisen-S1-E1.mp4?raw=1" type="video/mp4">
     </video>
-    <a href="https://www.dropbox.com/scl/fi/20wy5txrnomcbtneek6n1/Jujutsu-Kaisen-S1-E1.mp4?dl=1" class="download-btn">
-      Download Episode 1
-    </a>
+    <a href="https://www.dropbox.com/scl/fi/20wy5txrnomcbtneek6n1/Jujutsu-Kaisen-S1-E1.mp4?dl=1" class="download-btn">Download Episode 1</a>
   </div>
 
   <!-- Episodes 2-10 -->
+  <h2>Episodes 2-10</h2>
   <script>
-    let episodes = [
-      "https://www.dropbox.com/scl/fi/b8fzb2yjbks96kj56sl9l/Jujutsu-Kaisen-S1-E2.mp4?rlkey=rc15h82q99j95jr59zbpbeqx2&st=niflk1a0&raw=1",
-      "https://www.dropbox.com/scl/fi/e0nsk4ppgd2hfgcddyeua/Jujutsu-Kaisen-S1-E3.mp4?rlkey=6n87ispn0zbwblkp7b61yddcx&st=9ewp76n8&raw=1",
-      "https://www.dropbox.com/scl/fi/86mdv2ysq31g5j9gt7nny/Jujutsu-Kaisen-S1-E4.mp4?rlkey=2dw44r7ixbwf8urux3saxjefx&st=f2xaxvh7&raw=1",
-      "https://www.dropbox.com/scl/fi/arup6ta7885wxoki0tugk/Jujutsu-Kaisen-S1-E5.mp4?rlkey=m1pr56n8em9482f0bijsyymx0&st=z5e5zaff&raw=1",
-      "https://www.dropbox.com/scl/fi/41nnjbllmh6dsxm2hncud/Jujutsu-Kaisen-S1-E6.mp4?rlkey=svppaai2akwctyfoy6zzx9xhr&st=ft52bhcb&raw=1",
-      "https://www.dropbox.com/scl/fi/f1vub8gxke45r14ok38tn/Jujutsu-Kaisen-S1-E7.mp4?rlkey=1krh2pmvu830oib1z8v3f5xxq&st=kzpeds8c&raw=1",
-      "https://www.dropbox.com/scl/fi/emc6ejuhpmte4a8cewy0e/Jujutsu-Kaisen-S1-E8.mp4?rlkey=2rbetm2gocsbyqou3yuesaimc&st=7zz5ygvt&raw=1",
-      "https://www.dropbox.com/scl/fi/4yz5elswyubselv03hzs5/Jujutsu-Kaisen-S1-E9.mp4?rlkey=6s0cwz446mgvg98965dci2qnc&st=1ipdg1hn&raw=1",
-      "https://www.dropbox.com/scl/fi/tctskmjz37fszaafzvj11/Jujutsu-Kaisen-S1-E10.mp4?rlkey=19c7jjkokx1kdylroer3j1oyh&st=2kiqpds8&raw=1"
+    let episodes2to10 = [
+      "https://www.dropbox.com/scl/fi/b8fzb2yjbks96kj56sl9l/Jujutsu-Kaisen-S1-E2.mp4?raw=1",
+      "https://www.dropbox.com/scl/fi/e0nsk4ppgd2hfgcddyeua/Jujutsu-Kaisen-S1-E3.mp4?raw=1",
+      "https://www.dropbox.com/scl/fi/86mdv2ysq31g5j9gt7nny/Jujutsu-Kaisen-S1-E4.mp4?raw=1",
+      "https://www.dropbox.com/scl/fi/arup6ta7885wxoki0tugk/Jujutsu-Kaisen-S1-E5.mp4?raw=1",
+      "https://www.dropbox.com/scl/fi/41nnjbllmh6dsxm2hncud/Jujutsu-Kaisen-S1-E6.mp4?raw=1",
+      "https://www.dropbox.com/scl/fi/f1vub8gxke45r14ok38tn/Jujutsu-Kaisen-S1-E7.mp4?raw=1",
+      "https://www.dropbox.com/scl/fi/emc6ejuhpmte4a8cewy0e/Jujutsu-Kaisen-S1-E8.mp4?raw=1",
+      "https://www.dropbox.com/scl/fi/4yz5elswyubselv03hzs5/Jujutsu-Kaisen-S1-E9.mp4?raw=1",
+      "https://www.dropbox.com/scl/fi/tctskmjz37fszaafzvj11/Jujutsu-Kaisen-S1-E10.mp4?raw=1"
     ];
 
-    for (let i = 0; i < episodes.length; i++) {
+    for (let i = 0; i < episodes2to10.length; i++) {
       document.write(`
         <div class="episode-container">
           <h2>Episode ${i + 2}</h2>
           <video controls width="1280" height="720">
-            <source src="${episodes[i]}" type="video/mp4">
-            Your browser does not support the video tag.
+            <source src="${episodes2to10[i]}" type="video/mp4">
           </video>
-          <a href="${episodes[i].replace('raw=1', 'dl=1')}" class="download-btn">Download Episode ${i + 2}</a>
+          <a href="${episodes2to10[i].replace('raw=1', 'dl=1')}" class="download-btn">Download Episode ${i + 2}</a>
+        </div>
+      `);
+    }
+  </script>
+
+  <!-- Episodes 11-22 -->
+  <h2>Episodes 11-22</h2>
+  <script>
+    let episodes11to22 = [
+      "https://www.dropbox.com/scl/fi/rfclwmv3nfzdm3jatdukg/Jujutsu-Kaisen-S1-E11.mp4?raw=1",
+      "https://www.dropbox.com/scl/fi/306q7szwt8xnr58j1yui7/Jujutsu-Kaisen-S1-E12.mp4?raw=1",
+      "https://www.dropbox.com/scl/fi/2x4b8gqq65ayrca4b7tsw/Jujutsu-Kaisen-S1-E13.mp4?raw=1",
+      "https://www.dropbox.com/scl/fi/i7jrwifn87j91u4tf9dyp/Jujutsu-Kaisen-S1-E14.mp4?raw=1",
+      "https://www.dropbox.com/scl/fi/9ev2i0etnpnojk0ul2ur0/Jujutsu-Kaisen-S1-E15.mp4?raw=1",
+      "https://www.dropbox.com/scl/fi/ipreyga0llau2v6n3uu95/Jujutsu-Kaisen-S1-E16.mp4?raw=1",
+      "https://www.dropbox.com/scl/fi/8zc1lnxy85asuapzneiiq/Jujutsu-Kaisen-S1-E17.mp4?raw=1",
+      "https://www.dropbox.com/scl/fi/4rhfcsaaau4hfzh0yvaks/Jujutsu-Kaisen-S1-E18.mp4?raw=1",
+      "https://www.dropbox.com/scl/fi/oxcqlj9ssls5byyndu8fu/Jujutsu-Kaisen-S1-E19.mp4?raw=1",
+      "https://www.dropbox.com/scl/fi/f2yqm8dedqnh2ah09a522/Jujutsu-Kaisen-S1-E20.mp4?raw=1",
+      "https://www.dropbox.com/scl/fi/8d0atal0bmax745od63f8/Jujutsu-Kaisen-S1-E21.mp4?raw=1",
+      "https://www.dropbox.com/scl/fi/ri5t1qqkd0otpbfmf3tql/Jujutsu-Kaisen-S1-E22.mp4?raw=1"
+    ];
+
+    for (let i = 0; i < episodes11to22.length; i++) {
+      document.write(`
+        <div class="episode-container">
+          <h2>Episode ${i + 11}</h2>
+          <video controls width="1280" height="720">
+            <source src="${episodes11to22[i]}" type="video/mp4">
+          </video>
+          <a href="${episodes11to22[i].replace('raw=1', 'dl=1')}" class="download-btn">Download Episode ${i + 11}</a>
         </div>
       `);
     }

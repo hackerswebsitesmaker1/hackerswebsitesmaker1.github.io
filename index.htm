@@ -39,6 +39,49 @@
     .hidden {
       display: none;
     }
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .card {
+      background-color: #1a1a2e;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      transition: 0.3s;
+      width: 200px;
+    }
+    .card:hover {
+      transform: scale(1.1);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .card a {
+      color: #FFD700;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #1a1a2e;
+      color: white;
+      text-align: center;
+      font-size: 16px;
+    }
+    footer a {
+      color: #FFD700;
+      text-decoration: none;
+      margin: 0 10px;
+    }
   </style>
 </head>
 <body>
@@ -52,19 +95,50 @@
     </div>
   </div>
 
+  <div class="container">
+    <div class="card">
+      <a href="season1.html">
+        <img src="download (3).jpg" alt="Season 1">
+        <p>Season 1</p>
+      </a>
+    </div>
+    <div class="card">
+      <a href="season2.html">
+        <img src="download (4).jpg" alt="Season 2">
+        <p>Season 2</p>
+      </a>
+    </div>
+    <div class="card">
+      <a href="movie.html">
+        <img src="download (6).jpg" alt="Movie">
+        <p>Jujutsu Kaisen 0 Movie</p>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <p>This was created by a JJK fan. Join us on:</p>
+    <a href="https://twitter.com/yourlink" target="_blank">Twitter</a> |
+    <a href="https://discord.com/yourlink" target="_blank">Discord</a> |
+    <a href="https://facebook.com/yourlink" target="_blank">Facebook</a>
+  </footer>
+
   <script>
+    // Check if the user is logged in
     window.onload = function () {
       let loggedInUser = sessionStorage.getItem("loggedInUser");
+
       if (loggedInUser) {
-        document.getElementById("signup-btn").classList.add("hidden");
-        document.getElementById("signin-btn").classList.add("hidden");
+        document.getElementById("signup-btn").style.display = "none";
+        document.getElementById("signin-btn").style.display = "none";
         document.getElementById("signout-btn").classList.remove("hidden");
       }
     };
 
+    // Sign Out function
     function signOut() {
       sessionStorage.removeItem("loggedInUser");
-      location.reload();
+      location.reload(); // Reload the page to update buttons
     }
   </script>
 

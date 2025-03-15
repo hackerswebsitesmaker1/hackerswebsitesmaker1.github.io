@@ -52,13 +52,15 @@
       let password = document.getElementById("password").value;
 
       let storedData = localStorage.getItem(username);
-      
+
       if (storedData) {
-        let userData = JSON.parse(storedData);
+        let userData = JSON.parse(storedData); // Convert back to object
         
         if (userData.password === password) {
           sessionStorage.setItem("loggedInUser", username);
-          window.location.href = "index.htm"; // Redirect after login
+          
+          // Redirect to index.htm
+          window.location.href = "index.htm"; 
         } else {
           document.getElementById("message").innerText = "⚠ Incorrect password!";
         }

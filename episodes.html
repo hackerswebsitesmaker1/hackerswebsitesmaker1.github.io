@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episodes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="checkProStatus()">
+    <h1>Episodes List</h1>
+
+    <h2>Season 1</h2>
+    <ul>
+        <li><a href="ep1.html">Episode 1</a></li>
+        <li><a href="ep2.html">Episode 2</a></li>
+        <li><a href="ep3.html">Episode 3</a></li>
+        <li><a href="ep4.html">Episode 4</a></li>
+        <li><a href="ep5.html">Episode 5</a></li>
+        <li><a href="ep6.html">Episode 6</a></li>
+        <li><a href="ep7.html">Episode 7</a></li>
+        <li><a href="ep8.html">Episode 8</a></li>
+        <li><a href="ep9.html">Episode 9</a></li>
+        <li id="s1-ep10" style="display: none;"><a href="ep10.html">Episode 10 (Pro)</a></li>
+    </ul>
+
+    <h2>Season 2</h2>
+    <ul>
+        <li><a href="s2-ep1.html">Episode 1</a></li>
+        <li><a href="s2-ep2.html">Episode 2</a></li>
+        <li><a href="s2-ep3.html">Episode 3</a></li>
+        <li><a href="s2-ep4.html">Episode 4</a></li>
+        <li id="s2-ep5" style="display: none;"><a href="s2-ep5.html">Episode 5 (Pro)</a></li>
+        <li><a href="s2-ep6.html">Episode 6</a></li>
+        <li><a href="s2-ep7.html">Episode 7</a></li>
+        <li><a href="s2-ep8.html">Episode 8</a></li>
+        <li><a href="s2-ep9.html">Episode 9</a></li>
+    </ul>
+
+    <script>
+        function checkProStatus() {
+            if (localStorage.getItem("proUser") === "true") {
+                document.getElementById("s1-ep10").style.display = "block";
+                document.getElementById("s2-ep5").style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

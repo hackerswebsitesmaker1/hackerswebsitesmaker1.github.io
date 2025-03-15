@@ -1,41 +1,146 @@
-/* Ramadan-Themed Background */
-body {
-    background-color: #fdf6e3; /* Light beige for a warm Ramadan feel */
-    background-image: url('ramadan-pattern.png'); /* Optional decorative background */
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jujutsu Kaisen - Watch & Download</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #1a1a2e, #16213e);
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #1a1a2e;
+    }
+    .header h1 {
+      margin: 0;
+      color: #FFD700;
+    }
+    .auth-buttons {
+      display: flex;
+      gap: 10px;
+    }
+    .auth-buttons a, .auth-buttons button {
+      padding: 10px 15px;
+      background-color: yellow;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+      color: black;
+      border-radius: 5px;
+    }
+    .hidden {
+      display: none;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .card {
+      background-color: #1a1a2e;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      transition: 0.3s;
+      width: 200px;
+    }
+    .card:hover {
+      transform: scale(1.1);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .card a {
+      color: #FFD700;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #1a1a2e;
+      color: white;
+      text-align: center;
+      font-size: 16px;
+    }
+    footer a {
+      color: #FFD700;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
 
-/* Ramadan Banner */
-.ramadan-banner {
-    text-align: center;
-    padding: 15px;
-    background-color: #b68d40; /* Golden theme */
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-}
+  <div class="header">
+    <h1>Jujutsu Kaisen - Watch & Download</h1>
+    <div class="auth-buttons">
+      <a href="signup.html" id="signup-btn">Sign Up</a>
+      <a href="signin.html" id="signin-btn">Sign In</a>
+      <button id="signout-btn" class="hidden" onclick="signOut()">Sign Out</button>
+    </div>
+  </div>
 
-/* Cards Styling (Only Color Changes) */
-.card {
-    background-color: #fff8e1; /* Light gold */
-    border: 2px solid #b68d40; /* Golden border */
-    color: #5a3e1b; /* Dark brown text for an elegant look */
-    padding: 15px;
-    margin: 10px;
-    border-radius: 10px;
-}
+  <div class="container">
+    <div class="card">
+      <a href="season1.html">
+        <img src="download (3).jpg" alt="Season 1">
+        <p>Season 1</p>
+      </a>
+    </div>
+    <div class="card">
+      <a href="season2.html">
+        <img src="download (4).jpg" alt="Season 2">
+        <p>Season 2</p>
+      </a>
+    </div>
+    <div class="card">
+      <a href="movie.html">
+        <img src="download (6).jpg" alt="Movie">
+        <p>Jujutsu Kaisen 0 Movie</p>
+      </a>
+    </div>
+  </div>
 
-/* Ramadan Crescent & Lanterns (Decorations) */
-.decorations {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 1000;
-}
+  <footer>
+    <p>This was created by a JJK fan. Join us on:</p>
+    <a href="https://twitter.com/yourlink" target="_blank">Twitter</a> |
+    <a href="https://discord.com/yourlink" target="_blank">Discord</a> |
+    <a href="https://facebook.com/yourlink" target="_blank">Facebook</a>
+  </footer>
 
-.decorations img {
-    width: 50px;
-    height: auto;
-    margin: 5px;
-}
+  <script>
+    // Check if the user is logged in
+    window.onload = function () {
+      let loggedInUser = sessionStorage.getItem("loggedInUser");
+
+      if (loggedInUser) {
+        document.getElementById("signup-btn").style.display = "none";
+        document.getElementById("signin-btn").style.display = "none";
+        document.getElementById("signout-btn").classList.remove("hidden");
+      }
+    };
+
+    // Sign Out function
+    function signOut() {
+      sessionStorage.removeItem("loggedInUser");
+      location.reload(); // Reload the page to update buttons
+    }
+  </script>
+
+</body>
+</html>

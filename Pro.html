@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Version</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="checkProStatus()">
+    <h1>Pro Version Access</h1>
+
+    <div id="loginSection">
+        <p>Enter the access code to unlock exclusive content:</p>
+        <input type="password" id="accessCode" placeholder="Enter Access Code">
+        <button onclick="checkCode()">Submit</button>
+        <p id="message"></p>
+    </div>
+
+    <div id="proContent" style="display: none;">
+        <h2>Welcome to the Pro Version!</h2>
+        <p>You now have access to exclusive features.</p>
+        <ul>
+            <li>🔹 Special downloads</li>
+            <li>🔹 Extra guides & tips</li>
+            <li>🔹 Premium themes</li>
+        </ul>
+        <button onclick="logoutPro()">Logout</button>
+    </div>
+
+    <script>
+        function checkCode() {
+            const inputCode = document.getElementById("accessCode").value;
+            const message = document.getElementById("message");
+
+            if (inputCode === "24434") {
+                localStorage.setItem("proUser", "true");
+                showProContent();
+            } else {
+                message.textContent = "Incorrect Code. Try Again.";
+                message.style.color = "red";
+            }
+        }
+
+        function checkProStatus() {
+            if (localStorage.getItem("proUser") === "true") {
+                showProContent();
+            }
+        }
+
+        function showProContent() {
+            document.getElementById("loginSection").style.display = "none";
+            document.getElementById("proContent").style.display = "block";
+        }
+
+        function logoutPro() {
+            localStorage.removeItem("proUser");
+            location.reload();
+        }
+    </script>
+</body>
+</html>

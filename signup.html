@@ -12,7 +12,7 @@
       font-family: Arial, sans-serif;
     }
     .auth-container {
-      margin-top: 100px;
+      margin-top: 50px;
       background: rgba(255, 255, 255, 0.1);
       padding: 20px;
       border-radius: 10px;
@@ -34,12 +34,15 @@
       font-weight: bold;
       border-radius: 5px;
     }
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 <body>
 
   <h1>Sign Up</h1>
-  <div class="auth-container">
+  <div class="auth-container" id="signup-form">
     <input type="email" id="email" placeholder="Enter your Gmail"><br>
     <input type="text" id="newUsername" placeholder="Choose a username"><br>
     <input type="password" id="newPassword" placeholder="Choose a password"><br>
@@ -48,34 +51,65 @@
       <option value="Male">Male</option>
       <option value="Female">Female</option>
     </select><br>
-    <button onclick="signUp()">Sign Up</button>
+    <button onclick="sendConfirmationCode()">Next</button>
     <p id="message"></p>
   </div>
 
+  <!-- Email Confirmation Step -->
+  <div class="auth-container hidden" id="confirm-email">
+    <p>Enter the confirmation code sent to your email:</p>
+    <input type="text" id="confirmationCode" placeholder="Enter code"><br>
+    <button onclick="confirmSignup()">Confirm</button>
+    <p id="confirmMessage"></p>
+  </div>
+
   <script>
-    function signUp() {
+    let generatedCode = "";
+
+    function sendConfirmationCode() {
       let email = document.getElementById("email").value;
       let username = document.getElementById("newUsername").value;
       let password = document.getElementById("newPassword").value;
       let gender = document.getElementById("gender").value;
 
-      // Gmail validation
       if (!email.endsWith("@gmail.com")) {
         document.getElementById("message").innerText = "⚠ Please enter a valid Gmail address!";
         return;
       }
-
       if (!username || !password || !gender) {
         document.getElementById("message").innerText = "⚠ All fields are required!";
         return;
       }
-
       if (localStorage.getItem(username)) {
         document.getElementById("message").innerText = "⚠ Username already taken!";
+        return;
+      }
+
+      // Generate a fake confirmation code (In real systems, send via email)
+      generatedCode = Math.floor(100000 + Math.random() * 900000).toString();
+      alert("Your confirmation code is: " + generatedCode); // Simulating email sending
+
+      // Hide signup form & show confirmation step
+      document.getElementById("signup-form").classList.add("hidden");
+      document.getElementById("confirm-email").classList.remove("hidden");
+
+      // Save user data temporarily
+      sessionStorage.setItem("tempUser", JSON.stringify({ email, username, password, gender }));
+    }
+
+    function confirmSignup() {
+      let enteredCode = document.getElementById("confirmationCode").value;
+      if (enteredCode === generatedCode) {
+        let userData = JSON.parse(sessionStorage.getItem("tempUser"));
+        localStorage.setItem(userData.username, JSON.stringify(userData));
+        sessionStorage.removeItem("tempUser");
+
+        document.getElementById("confirmMessage").innerText = "✅ Account created successfully!";
+        setTimeout(() => {
+          window.location.href = "signin.html";
+        }, 2000);
       } else {
-        let userData = { email, username, password, gender };
-        localStorage.setItem(username, JSON.stringify(userData));
-        document.getElementById("message").innerText = "✅ Account created! Now sign in.";
+        document.getElementById("confirmMessage").innerText = "⚠ Incorrect code!";
       }
     }
   </script>

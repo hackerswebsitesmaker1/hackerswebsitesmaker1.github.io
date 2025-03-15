@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up</title>
+  <title>Sign In</title>
   <style>
     body {
       background: linear-gradient(to bottom, #1a1a2e, #16213e);
@@ -12,13 +12,13 @@
       font-family: Arial, sans-serif;
     }
     .auth-container {
-      margin-top: 50px;
+      margin-top: 100px;
       background: rgba(255, 255, 255, 0.1);
       padding: 20px;
       border-radius: 10px;
       display: inline-block;
     }
-    input, select {
+    input {
       padding: 10px;
       margin: 5px;
       width: 220px;
@@ -34,82 +34,38 @@
       font-weight: bold;
       border-radius: 5px;
     }
-    .hidden {
-      display: none;
-    }
   </style>
 </head>
 <body>
 
-  <h1>Sign Up</h1>
-  <div class="auth-container" id="signup-form">
-    <input type="email" id="email" placeholder="Enter your Gmail"><br>
-    <input type="text" id="newUsername" placeholder="Choose a username"><br>
-    <input type="password" id="newPassword" placeholder="Choose a password"><br>
-    <select id="gender">
-      <option value="">Select Gender</option>
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-    </select><br>
-    <button onclick="sendConfirmationCode()">Next</button>
+  <h1>Sign In</h1>
+  <div class="auth-container">
+    <input type="text" id="username" placeholder="Enter username"><br>
+    <input type="password" id="password" placeholder="Enter password"><br>
+    <button onclick="signIn()">Sign In</button>
     <p id="message"></p>
   </div>
 
-  <!-- Email Confirmation Step -->
-  <div class="auth-container hidden" id="confirm-email">
-    <p>Enter the confirmation code sent to your email:</p>
-    <input type="text" id="confirmationCode" placeholder="Enter code"><br>
-    <button onclick="confirmSignup()">Confirm</button>
-    <p id="confirmMessage"></p>
-  </div>
-
   <script>
-    let generatedCode = "";
+    function signIn() {
+      let username = document.getElementById("username").value;
+      let password = document.getElementById("password").value;
 
-    function sendConfirmationCode() {
-      let email = document.getElementById("email").value;
-      let username = document.getElementById("newUsername").value;
-      let password = document.getElementById("newPassword").value;
-      let gender = document.getElementById("gender").value;
+      let storedData = localStorage.getItem(username);
 
-      if (!email.endsWith("@gmail.com")) {
-        document.getElementById("message").innerText = "⚠ Please enter a valid Gmail address!";
-        return;
-      }
-      if (!username || !password || !gender) {
-        document.getElementById("message").innerText = "⚠ All fields are required!";
-        return;
-      }
-      if (localStorage.getItem(username)) {
-        document.getElementById("message").innerText = "⚠ Username already taken!";
-        return;
-      }
-
-      // Generate a fake confirmation code (In real systems, send via email)
-      generatedCode = Math.floor(100000 + Math.random() * 900000).toString();
-      alert("Your confirmation code is: " + generatedCode); // Simulating email sending
-
-      // Hide signup form & show confirmation step
-      document.getElementById("signup-form").classList.add("hidden");
-      document.getElementById("confirm-email").classList.remove("hidden");
-
-      // Save user data temporarily
-      sessionStorage.setItem("tempUser", JSON.stringify({ email, username, password, gender }));
-    }
-
-    function confirmSignup() {
-      let enteredCode = document.getElementById("confirmationCode").value;
-      if (enteredCode === generatedCode) {
-        let userData = JSON.parse(sessionStorage.getItem("tempUser"));
-        localStorage.setItem(userData.username, JSON.stringify(userData));
-        sessionStorage.removeItem("tempUser");
-
-        document.getElementById("confirmMessage").innerText = "✅ Account created successfully!";
-        setTimeout(() => {
-          window.location.href = "signin.html";
-        }, 2000);
+      if (storedData) {
+        let userData = JSON.parse(storedData); // Convert back to object
+        
+        if (userData.password === password) {
+          sessionStorage.setItem("loggedInUser", username);
+          
+          // Redirect to index.htm
+          window.location.href = "index.htm"; 
+        } else {
+          document.getElementById("message").innerText = "⚠ Incorrect password!";
+        }
       } else {
-        document.getElementById("confirmMessage").innerText = "⚠ Incorrect code!";
+        document.getElementById("message").innerText = "⚠ Username not found!";
       }
     }
   </script>

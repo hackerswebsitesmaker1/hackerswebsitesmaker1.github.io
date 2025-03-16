@@ -38,7 +38,9 @@
 
     <script>
         function checkProStatus() {
-            if (localStorage.getItem("proUser") === "true") {
+            let isPro = localStorage.getItem("proUser");  
+            
+            if (isPro === "true") {
                 document.getElementById("s1-ep10").style.display = "block";
                 document.getElementById("s2-ep5").style.display = "block";
             }

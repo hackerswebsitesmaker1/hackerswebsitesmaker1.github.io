@@ -1,102 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jujutsu Kaisen - Season 1 Episodes</title>
-    <style>
-        body {
-            background-color: #16213e;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        h1 {
-            color: #FFD700;
-        }
-        .episode-container {
-            margin: 20px auto;
-            width: 80%;
-            max-width: 600px;
-            padding: 15px;
-            background-color: #1a1a2e;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-        }
-        video {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .download-btn {
-            display: block;
-            margin: 10px 0;
-            padding: 10px;
-            background-color: #FFD700;
-            color: black;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-        .download-btn:hover {
-            background-color: #00FF00;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jujutsu Kaisen - Season 1 Episodes</title>
+  <style>
+    body {
+      background-color: #16213e;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      color: #FFD700;
+    }
+    .episode-container {
+      margin: 20px auto;
+      width: 80%;
+      max-width: 800px;
+      padding: 15px;
+      background-color: #1a1a2e;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+    video {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .download-btn {
+      display: block;
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #FFD700;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+    .download-btn:hover {
+      background-color: #00FF00;
+    }
+  </style>
 </head>
-<body onload="checkProStatus()">
-    <h1>Jujutsu Kaisen - Season 1</h1>
-    <p>Watch episodes online or download them.</p>
+<body>
+  <h1>Jujutsu Kaisen - Season 1</h1>
+  <p>Watch episodes online or download them.</p>
 
-    <!-- Episodes 1 to 9 (Always Available) -->
-    <script>
-        let episodes = [];
-        for (let i = 1; i <= 9; i++) {
-            episodes.push(`./Jujutsu%20Kaisen%20S1%20E${i}.mp4`);
-        }
-        for (let i = 0; i < episodes.length; i++) {
-            document.write(`
-                <div class="episode-container">
-                    <h2>Episode ${i + 1}</h2>
-                    <video controls>
-                        <source src="${episodes[i]}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    <a href="${episodes[i]}" download class="download-btn">Download Episode ${i + 1}</a>
-                </div>
-            `);
-        }
-    </script>
+  <!-- Episode 1 -->
+  <div class="episode-container">
+    <h2>Episode 1</h2>
+    <video controls width="1280" height="720">
+      <source src="https://www.dropbox.com/scl/fi/20wy5txrnomcbtneek6n1/Jujutsu-Kaisen-S1-E1.mp4?rlkey=vcn7r5e7pyn67dcfh11s3n8b5&st=jbswfhsb&raw=1" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <a href="https://www.dropbox.com/scl/fi/20wy5txrnomcbtneek6n1/Jujutsu-Kaisen-S1-E1.mp4?dl=1" class="download-btn">
+      Download Episode 1
+    </a>
+  </div>
 
-    <!-- Episode 10 (Locked for Non-Pro Users) -->
-    <div id="s1-ep10" style="display: none;">
-        <h2>Episode 10</h2>
-        <video controls>
-            <source src="Jujutsu%20Kaisen%20S1%20E10.mp4" type="video/mp4">
+  <!-- Episodes 2-10 -->
+  <script>
+    let episodes = [
+      "https://www.dropbox.com/scl/fi/b8fzb2yjbks96kj56sl9l/Jujutsu-Kaisen-S1-E2.mp4?rlkey=rc15h82q99j95jr59zbpbeqx2&st=niflk1a0&raw=1",
+      "https://www.dropbox.com/scl/fi/e0nsk4ppgd2hfgcddyeua/Jujutsu-Kaisen-S1-E3.mp4?rlkey=6n87ispn0zbwblkp7b61yddcx&st=9ewp76n8&raw=1",
+      "https://www.dropbox.com/scl/fi/86mdv2ysq31g5j9gt7nny/Jujutsu-Kaisen-S1-E4.mp4?rlkey=2dw44r7ixbwf8urux3saxjefx&st=f2xaxvh7&raw=1",
+      "https://www.dropbox.com/scl/fi/arup6ta7885wxoki0tugk/Jujutsu-Kaisen-S1-E5.mp4?rlkey=m1pr56n8em9482f0bijsyymx0&st=z5e5zaff&raw=1",
+      "https://www.dropbox.com/scl/fi/41nnjbllmh6dsxm2hncud/Jujutsu-Kaisen-S1-E6.mp4?rlkey=svppaai2akwctyfoy6zzx9xhr&st=ft52bhcb&raw=1",
+      "https://www.dropbox.com/scl/fi/f1vub8gxke45r14ok38tn/Jujutsu-Kaisen-S1-E7.mp4?rlkey=1krh2pmvu830oib1z8v3f5xxq&st=kzpeds8c&raw=1",
+      "https://www.dropbox.com/scl/fi/emc6ejuhpmte4a8cewy0e/Jujutsu-Kaisen-S1-E8.mp4?rlkey=2rbetm2gocsbyqou3yuesaimc&st=7zz5ygvt&raw=1",
+      "https://www.dropbox.com/scl/fi/4yz5elswyubselv03hzs5/Jujutsu-Kaisen-S1-E9.mp4?rlkey=6s0cwz446mgvg98965dci2qnc&st=1ipdg1hn&raw=1",
+      "https://www.dropbox.com/scl/fi/tctskmjz37fszaafzvj11/Jujutsu-Kaisen-S1-E10.mp4?rlkey=19c7jjkokx1kdylroer3j1oyh&st=2kiqpds8&raw=1"
+    ];
+
+    for (let i = 0; i < episodes.length; i++) {
+      document.write(`
+        <div class="episode-container">
+          <h2>Episode ${i + 2}</h2>
+          <video controls width="1280" height="720">
+            <source src="${episodes[i]}" type="video/mp4">
             Your browser does not support the video tag.
-        </video>
-        <a href="Jujutsu%20Kaisen%20S1%20E10.mp4" download class="download-btn">Download Episode 10</a>
-    </div>
+          </video>
+          <a href="${episodes[i].replace('raw=1', 'dl=1')}" class="download-btn">Download Episode ${i + 2}</a>
+        </div>
+      `);
+    }
+  </script>
 
-    <!-- Message for Non-Pro Users -->
-    <div id="s1-ep10-locked">
-        <h2>🔒 Episode 10 is only available for Pro users</h2>
-        <p>Unlock it by entering the Pro code in the <a href="pro.html">Pro Version page</a>.</p>
-    </div>
-
-    <a href="index.htm" style="color:#FFD700; text-decoration: none; display: block; margin: 20px;">Back to Home</a>
-
-    <script>
-        function checkProStatus() {
-            let isPro = localStorage.getItem("proUser");
-
-            if (isPro === "true") {
-                document.getElementById("s1-ep10").style.display = "block";
-                document.getElementById("s1-ep10-locked").style.display = "none";
-            } else {
-                document.getElementById("s1-ep10").style.display = "none";
-                document.getElementById("s1-ep10-locked").style.display = "block";
-            }
-        }
-    </script>
-
+  <a href="index.htm" style="color:#FFD700; text-decoration: none; display: block; margin: 20px;">Back to Home</a>
 </body>
 </html>

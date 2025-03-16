@@ -20,7 +20,7 @@
         <li><a href="ep7.html">Episode 7</a></li>
         <li><a href="ep8.html">Episode 8</a></li>
         <li><a href="ep9.html">Episode 9</a></li>
-        <li id="s1-ep10" style="display: none;"><a href="ep10.html">Episode 10 (Pro)</a></li>
+        <li id="s1-ep10" style="display: none;"><a href="ep10.html">🔒 Episode 10 (Pro Only)</a></li>
     </ul>
 
     <h2>Season 2</h2>
@@ -29,7 +29,7 @@
         <li><a href="s2-ep2.html">Episode 2</a></li>
         <li><a href="s2-ep3.html">Episode 3</a></li>
         <li><a href="s2-ep4.html">Episode 4</a></li>
-        <li id="s2-ep5" style="display: none;"><a href="s2-ep5.html">Episode 5 (Pro)</a></li>
+        <li id="s2-ep5" style="display: none;"><a href="s2-ep5.html">🔒 Episode 5 (Pro Only)</a></li>
         <li><a href="s2-ep6.html">Episode 6</a></li>
         <li><a href="s2-ep7.html">Episode 7</a></li>
         <li><a href="s2-ep8.html">Episode 8</a></li>
@@ -38,11 +38,16 @@
 
     <script>
         function checkProStatus() {
-            let isPro = localStorage.getItem("proUser");  
-            
+            console.log("Checking Pro status...");
+
+            let isPro = localStorage.getItem("proUser");
+            console.log("Pro Status:", isPro); 
+
             if (isPro === "true") {
                 document.getElementById("s1-ep10").style.display = "block";
                 document.getElementById("s2-ep5").style.display = "block";
+            } else {
+                console.log("User is not Pro. Episodes are locked.");
             }
         }
     </script>
